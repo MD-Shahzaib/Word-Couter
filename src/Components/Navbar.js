@@ -1,4 +1,6 @@
 import React from 'react'
+// ICONS.
+import { MdSunny, MdDarkMode } from 'react-icons/md';
 
 const Navbar = ({ darkMode, setDarkMode }) => {
     const handleToggleDarkMode = () => setDarkMode(!darkMode);
@@ -9,7 +11,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
                     <img src={require("./Logo.png")} alt="App Logo" className='h-10 w-10 rounded-full object-cover object-center' />
                     <span className="ml-3 text-xl">Word Counter</span>
                 </div>
-                <button className={`inline-flex items-center ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} border-0 py-1 px-3 focus:outline-none rounded text-base`} onClick={handleToggleDarkMode}>{darkMode ? "Light Mode" : "Dark Mode"} <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></button>
+                <button className={`inline-flex items-center ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} border-0 py-1.5 px-3 focus:outline-none rounded text-base font-semibold`} onClick={handleToggleDarkMode}>
+                    Theme {darkMode ? <MdSunny className='text-2xl ml-0.5' /> : <MdDarkMode className='text-2xl ml-0.5' />}
+                </button>
             </div>
         </header>
     )

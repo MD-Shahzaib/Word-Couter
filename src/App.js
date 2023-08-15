@@ -19,7 +19,7 @@ const App = () => {
     const characters = newText.length;
     const sentences = newText.split(/[.!?]+/).filter(Boolean).length;
     const paragraphs = newText.split(/\n\s*\n/).filter(Boolean).length;
-    const wordsPerMinute = 200; // Adjust this value based on reading speed
+    const wordsPerMinute = 100; // Adjust this value based on reading speed
 
     setWordCount(words.length);
     setCharacterCount(characters);
@@ -65,15 +65,15 @@ const App = () => {
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className={`${darkMode ? "bg-slate-800" : "bg-gray-200"}`}>
         <div className={`container mx-auto py-4 px-6`}>
-          <h1 className={`text-3xl font-semibold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Word Counter App</h1>
+          <h1 className={`text-3xl font-semibold mb-2 max-[310px]:text-2xl max-[310px]:text-center ${darkMode ? "text-white" : "text-gray-900"}`}>Word Counter</h1>
           <textarea className={`${darkMode ? "bg-slate-900 text-gray-400" : "bg-white text-gray-900"} p-2 border border-gray-300 outline-blue-500 rounded w-full`} rows="6" cols="85" placeholder="Type or paste your text here..." value={text} onChange={handleTextChange}></textarea>
-          <div className="flex items-center flex-wrap gap-2 rounded mb-4 w-full">
-            <button className="p-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600" onClick={handleUpperCase}>Uppercase</button>
-            <button className="p-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600" onClick={handleLowerCase}>Lowercase</button>
-            <button className="p-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600" onClick={handleCapitalize}>Capitalize</button>
-            <button className="p-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600" onClick={handleClearText}>Clear Text</button>
-            <button className="p-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600" onClick={handleCopyText}>Copy Text</button>
-            <button className="p-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600" onClick={handleRemoveExtraSpaces}>Remove Extra Spaces</button>
+          <div className="flex items-center flex-wrap gap-2 rounded mb-4 w-full max-[800px]:justify-center">
+            <button className={`p-2 bg-blue-500 text-white rounded text-sm font-semibold tracking-wide ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-blue-500 hover:bg-blue-600 "}`} onClick={handleUpperCase}>Uppercase</button>
+            <button className={`p-2 bg-blue-500 text-white rounded text-sm font-semibold tracking-wide ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-blue-500 hover:bg-blue-600 "}`} onClick={handleLowerCase}>Lowercase</button>
+            <button className={`p-2 bg-blue-500 text-white rounded text-sm font-semibold tracking-wide ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-blue-500 hover:bg-blue-600 "}`} onClick={handleCapitalize}>Capitalize</button>
+            <button className={`p-2 bg-blue-500 text-white rounded text-sm font-semibold tracking-wide ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-blue-500 hover:bg-blue-600 "}`} onClick={handleClearText}>Clear Text</button>
+            <button className={`p-2 bg-blue-500 text-white rounded text-sm font-semibold tracking-wide ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-blue-500 hover:bg-blue-600 "}`} onClick={handleCopyText}>Copy Text</button>
+            <button className={`p-2 bg-blue-500 text-white rounded text-sm font-semibold tracking-wide ${darkMode ? "bg-slate-700 hover:bg-slate-600" : "bg-blue-500 hover:bg-blue-600 "}`} onClick={handleRemoveExtraSpaces}>Remove Extra Spaces</button>
           </div>
           <div className={`${darkMode ? "bg-slate-900 text-gray-400" : "bg-white text-gray-900"} p-4 rounded mb-4`}>
             <h2 className={`text-2xl font-semibold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>Your Text Summary</h2>
